@@ -9,17 +9,19 @@ class Produto:
         self.marca = marca
 
 # Especializações de produtos
-class Eletronico(Produto):
-    def _init_(self, codigo_barras, nome, preco, marca, modelo):
+class discos_taylorswift(Produto):
+    def _init_(self, codigo_barras, nome, preco, marca, gravadora):
         super()._init_(codigo_barras, nome, preco, marca)
-        self.modelo = modelo
+        self.gravadora = gravadora
 
-class Vestuario(Produto):
+class roupas_taylorswift(Produto):
     def _init_(self, codigo_barras, nome, preco, marca, tamanho):
         super()._init_(codigo_barras, nome, preco, marca)
         self.tamanho = tamanho
 
-class Alimento(Produto):
-    def _init_(self, codigo_barras, nome, preço, marca, data_validade):
+class posters_taylorswift(Produto):
+    def _init_(self, codigo_barras, nome, preço, marca, cor, tamanho):
         super()._init_(codigo_barras, nome, preço, marca)
-        self.data_validade = data_validade
+        self.cor = cor
+        self.tamanho = tamanho
+
