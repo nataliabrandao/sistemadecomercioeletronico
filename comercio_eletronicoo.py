@@ -18,3 +18,8 @@ class Vestuario(Produto):
     def _init_(self, codigo_barras, nome, preco, marca, tamanho):
         super()._init_(codigo_barras, nome, preco, marca)
         self.tamanho = tamanho
+
+class Alimento(Produto):
+    def _init_(self, codigo_barras, nome, preço, marca, data_validade):
+        super()._init_(codigo_barras, nome, preço, marca)
+        self.data_validade = data_validade
