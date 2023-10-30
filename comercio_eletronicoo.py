@@ -8,19 +8,37 @@ class Produto:
         self.preco = preco
         self.marca = marca
 
-    def inventario(self, nome, qtde):
+class Inventario(self, nome, qtde):
+    def __init__(self):
         self.estoque = []
 
+    #retira o produto do inventario, caso seja vendido
     def vender_produto(self, codigo_barras):
-        for produto in self.estoque:
-            if produto.codigo_barras == codigo_barras:
-                self.estoque.remove(produto)
 
+        try:
+            for produto in self.estoque:
+                isProduto = (produto.codigo_barras == codigo_barras)
+
+                if produto.codigo_barras == codigo_barras:
+                    self.estoque.remove(produto)
+            
+            if isProduto == False:
+                raise KeyError()
+            
+        except NameError:
+            print("O produto está fora de estoque no momento :( Sorry, Swifter")
+        except KeyError:
+            print("O código de barras não é válido!")
+            
+    #atualiza o inventario repondo produtos de acordo com a qtde dada
     def repor_produto(self, nome, qtde):
         for n in range(qtde):
             self.estoque.append(nome)
-    
 
+    #adiciona o produto de volta ao estoque, em caso de devolução
+    def retorno_produto(self, nome):
+        self.estoque.append(nome)
+    
 # Especializações de produtos
 class discos_taylorswift(Produto):
     def _init_(self, codigo_barras, nome, preco, marca, gravadora):
