@@ -13,3 +13,8 @@ class Eletronico(Produto):
     def _init_(self, codigo_barras, nome, preco, marca, modelo):
         super()._init_(codigo_barras, nome, preco, marca)
         self.modelo = modelo
+
+class Vestuario(Produto):
+    def _init_(self, codigo_barras, nome, preco, marca, tamanho):
+        super()._init_(codigo_barras, nome, preco, marca)
+        self.tamanho = tamanho
