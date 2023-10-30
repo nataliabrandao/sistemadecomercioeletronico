@@ -41,18 +41,18 @@ class Inventario(self, nome, qtde):
     
 # Especializações de produtos
 class discos_taylorswift(Produto):
-    def _init_(self, codigo_barras, nome, preco, marca, gravadora):
-        super()._init_(codigo_barras, nome, preco, marca)
+    def __init__(self, codigo_barras, nome, preco, gravadora):
+        super().__init__(codigo_barras, nome, preco)
         self.gravadora = gravadora
 
 class roupas_taylorswift(Produto):
-    def _init_(self, codigo_barras, nome, preco, marca, tamanho):
-        super()._init_(codigo_barras, nome, preco, marca)
+    def __init__(self, codigo_barras, nome, preco, marca, tamanho):
+        super().__init__(codigo_barras, nome, preco, marca)
         self.tamanho = tamanho
 
 class posters_taylorswift(Produto):
-    def _init_(self, codigo_barras, nome, preço, marca, cor, tamanho):
-        super()._init_(codigo_barras, nome, preço, marca)
+    def __init__(self, codigo_barras, nome, preço, marca, cor, tamanho):
+        super().__init__(codigo_barras, nome, preço, marca)
         self.cor = cor
         self.tamanho = tamanho
 
@@ -67,7 +67,21 @@ class Marca(Enum):
     Papelaria_JLM = 8
     Americanas = 9
 
+if __init__ == "__main__":
 
+    #Criação de estoque da Loja "Polinômios da Taylor"
+    discos_taylorswift('001', 'Fearless', 15.99, MarcaProduto.Republic_Records),
+    discos_taylorswift('002', 'Speak Now', 12.99, MarcaProduto.Republic_Records),
+    discos_taylorswift('003', 'Red', 18.99, MarcaProduto.Big_Machine_Records),
+    discos_taylorswift('004', '1989', 19.99, MarcaProduto.Big_Machine_Records),
+    discos_taylorswift('005', 'Reputation', 22.99, MarcaProduto.Big_Machine_Records),
+    discos_taylorswift('006', 'Lover', 20.99, MarcaProduto.Republic_Records),
+    discos_taylorswift('007', 'Folklore', 21.99, MarcaProduto.Universal_Music_Group),
+    discos_taylorswift('008', 'Evermore', 21.99, MarcaProduto.Universal_Music_Group)
+    roupas_taylorswift('101', 'Moletom', 120.50, Marca.Zara, M)
+    roupas_taylorswift('102', 'Moletom', 120.50, Marca.Zara, G)
+    roupas_taylorswift('103', 'Baby Look', 599.99, Marca.Chanel, M)
+    roupas_taylorswift('104', 'Baby Look', 599.99, Marca.Chanel, G)
 
 
 
