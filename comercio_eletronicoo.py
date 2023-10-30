@@ -7,3 +7,9 @@ class Produto:
         self.nome = nome
         self.preco = preco
         self.marca = marca
+
+# Especializações de produtos
+class Eletronico(Produto):
+    def _init_(self, codigo_barras, nome, preco, marca, modelo):
+        super()._init_(codigo_barras, nome, preco, marca)
+        self.modelo = modelo
