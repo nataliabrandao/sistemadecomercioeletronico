@@ -25,3 +25,20 @@ class posters_taylorswift(Produto):
         self.cor = cor
         self.tamanho = tamanho
 
+class Marca(Enum):
+    WorldHeart = 1
+    Chanel = 2
+    Zara = 3
+    Virgin_EMI_Records = 4
+    Big_Machine_Records = 5
+    Universal_Republic_Records = 6
+    Papelaria_Catete = 7
+    Papelaria_JLM = 8
+    Americanas = 9
+
+
+
+
+
+
+
