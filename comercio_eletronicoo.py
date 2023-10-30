@@ -8,6 +8,19 @@ class Produto:
         self.preco = preco
         self.marca = marca
 
+    def inventario(self, nome, qtde):
+        self.estoque = []
+
+    def vender_produto(self, codigo_barras):
+        for produto in self.estoque:
+            if produto.codigo_barras == codigo_barras:
+                self.estoque.remove(produto)
+
+    def repor_produto(self, nome, qtde):
+        for n in range(qtde):
+            self.estoque.append(nome)
+    
+
 # Especializações de produtos
 class discos_taylorswift(Produto):
     def _init_(self, codigo_barras, nome, preco, marca, gravadora):
