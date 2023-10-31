@@ -129,3 +129,33 @@ if __name__ == "__main__":
     inventario.vender_produto('001')
     inventario.vender_produto('101')
     inventario.vender_produto('004')
+
+# Imprimir inventário
+print("Produtos em estoque:")
+for produto in inventario.estoque:
+    tipo_produto = None
+
+    if isinstance(produto, Discos_taylorswift):
+        tipo_produto = "Disco"
+    elif isinstance(produto, Roupas_taylorswift):
+        tipo_produto = "Roupa"
+    elif isinstance(produto, Posters_taylorswift):
+        tipo_produto = "Poster"
+    
+    if tipo_produto:
+        print(f"Tipo: {tipo_produto}")
+        print(f"Código de Barras: {produto.codigo_barras}")
+        print(f"Nome: {produto.nome}")
+
+        if hasattr(produto, "marca"):
+            print(f"Marca: {produto.marca.name}")
+        print(f"Preço: R${produto.preco:.2f}")
+
+        if tipo_produto == "Roupa" and hasattr(produto, "tamanho"):
+            print(f"Tamanho: {produto.tamanho}")
+
+        if tipo_produto == "Poster":
+            print(f"Cor: {produto.cor}")
+            print(f"Tamanho: {produto.tamanho}")
+
+        print("\n")
