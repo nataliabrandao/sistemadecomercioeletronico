@@ -100,3 +100,32 @@ if __name__ == "__main__":
     roupa4 = Roupas_taylorswift('104', 'Baby Look', 599.99, Marca.Chanel, 'G')
     poster1 = Posters_taylorswift('201', 'Taylor Swift The Eras Tour', 8.00, Marca.Papelaria_Catete, 'branco', '30x30')
     poster2 = Posters_taylorswift('202', 'A Lot Going On At The Momento', 5.00, Marca.WorldHeart, 'branco', '30x30')
+
+    #Criação do inventario
+    inventario = Inventario()
+
+    inventario.validar_codigo(disco1)
+    inventario.validar_codigo(disco2)
+    inventario.validar_codigo(disco3)
+    inventario.validar_codigo(disco4)
+    inventario.validar_codigo(disco5)
+    inventario.validar_codigo(disco6)
+    inventario.validar_codigo(disco7)
+    inventario.validar_codigo(disco8)
+    inventario.validar_codigo(roupa1)
+    inventario.validar_codigo(roupa2)
+    inventario.validar_codigo(roupa3)
+    inventario.validar_codigo(roupa4)
+    inventario.validar_codigo(poster1)
+    inventario.validar_codigo(poster2)
+
+    #reposição de estoque
+    inventario.repor_produto(disco4, 2)
+    inventario.repor_produto(roupa2, 2)
+    inventario.repor_produto(poster1, 1)
+
+    #venda de produto 
+    inventario.vender_produto('301')
+    inventario.vender_produto('001')
+    inventario.vender_produto('101')
+    inventario.vender_produto('004')
